@@ -17,38 +17,42 @@
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="Welcome,"
             android:textColor="@android:color/white"
-            android:textSize="24dp"
-            android:fontFamily="sans-serif-medium" />
+            android:textSize="24dp" />
 
         <!-- Floating action button inside the header -->
         <ImageButton
             android:id="@+id/floating_button"
             android:layout_width="48dp"
-            android:layout_height="24dp"
-            android:layout_alignParentRight="true"
+            android:layout_height="36dp"
             android:layout_alignParentEnd="true"
             android:src="@android:drawable/ic_menu_share"
-            android:background="#FFC013"
             android:contentDescription="Floating Action Button" />
     </RelativeLayout>
 
     <!-- Solid Color ImageView -->
-    <ImageView
-        android:id="@+id/terms_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/header"
-        android:background="#FFC107"
-        android:scaleType="centerCrop" />
+<!--    <ImageView-->
+<!--        android:id="@+id/terms_image"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_below="@id/header"-->
+<!--        android:background="#FFC107"-->
+<!--        android:scaleType="centerCrop" />-->
 
     <!-- Terms and conditions text -->
+
+    <ViewFlipper
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_below="@id/terms_image"
+        android:layout_below="@id/carousel"
         android:layout_above="@id/footer"
         android:padding="16dp">
 
