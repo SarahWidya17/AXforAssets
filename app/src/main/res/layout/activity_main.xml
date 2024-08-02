@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome,"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:fontFamily="sans-serif-medium" />
 
         <!-- Floating action button inside the header -->
