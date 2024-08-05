@@ -1,59 +1,104 @@
 package com.example.axforasset;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ViewFlipper;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText usernameInput, passwordInput;
-    private Button loginBtn;
+    private TextView termsText;
+    private Button tabTerms, tabConditions;
+    private ViewFlipper carousel;
+    private ImageView menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.home_page);
 
-        usernameInput = findViewById(R.id.username_input);
-        passwordInput = findViewById(R.id.password_input);
-        loginBtn = findViewById(R.id.login_button);
+        termsText = findViewById(R.id.terms_text);
+        tabTerms = findViewById(R.id.tab_terms);
+        tabConditions = findViewById(R.id.tab_conditions);
+        menuButton = findViewById(R.id.menu_button);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        carousel = findViewById(R.id.carousel);
+        int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+        for (int image : images) {
+            ImageView imageObj = new ImageView(this);
+            imageObj.setBackgroundResource(image);
+            carousel.addView(imageObj);
+            carousel.setFlipInterval(3000);
+            carousel.setAutoStart(true);
+            carousel.setInAnimation(this, android.R.anim.slide_in_left);
+            carousel.setOutAnimation(this, android.R.anim.slide_out_right);
+        }
+
+        tabTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
+                termsText.setText("..."); // Replace with your terms text
+            }
+        });
 
-                boolean check = validateinfo(name, password);
+        tabConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                termsText.setText("..."); // Replace with your conditions text
+            }
+        });
 
-                if(check == true) {
-                    Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
-                }
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
             }
         });
     }
 
-    private Boolean validateinfo(String name, String password) {
-        if(name.length() == 0){
-            usernameInput.requestFocus();
-            usernameInput.setError("Username must be filled in");
-            return false;
-        }
+    private void showPopupMenu(View anchorView) {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.menu_lightbox, null);
 
-        else if(password.length() == 0){
-            passwordInput.requestFocus();
-            passwordInput.setError("Password must be filled in");
-            return false;
-        } else if (password.length() < 8) {
-            passwordInput.requestFocus();
-            passwordInput.setError("Password length must be at least 8 characters");
-            return false;
-        } else{
-            return true;
-        }
+        final PopupWindow popupWindow = new PopupWindow(popupView,
+                DrawerLayout.LayoutParams.WRAP_CONTENT,
+                DrawerLayout.LayoutParams.WRAP_CONTENT,
+                true);
+
+        // Setting up click listeners for menu items
+        popupView.findViewById(R.id.menu_items).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle Items click
+                popupWindow.dismiss();
+            }
+        });
+
+        popupView.findViewById(R.id.menu_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle Profile click
+                popupWindow.dismiss();
+            }
+        });
+
+        popupView.findViewById(R.id.menu_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle Logout click
+                popupWindow.dismiss();
+            }
+        });
+
+        // Show the popup menu
+        popupWindow.showAtLocation(anchorView, Gravity.TOP | Gravity.END, 0, 0);
     }
 }
