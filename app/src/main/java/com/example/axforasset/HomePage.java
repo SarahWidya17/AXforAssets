@@ -1,5 +1,6 @@
 package com.example.axforasset;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,7 +22,6 @@ public class HomePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
@@ -94,6 +94,9 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle Logout click
+                Intent intent = new Intent(HomePage.this, Login.class);
+                startActivity(intent);
+                finish();
                 popupWindow.dismiss();
             }
         });
