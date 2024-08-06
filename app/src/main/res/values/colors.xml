@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="pink">#EC4399</color>
-    <color name="light_gray">#E0DDDA</color>
-    <color name="dark_gray">#605F5F</color>
-
+    <color name="pinkOpacity">#24EC4399</color>
+    <color name="pink2">#EC808D</color>
+    <color name="shadow">#34000000</color>
+    <color name="grey">#B3000000</color>
+    <color name="pinkBg">#CCEFD5E0</color>
 </resources>
