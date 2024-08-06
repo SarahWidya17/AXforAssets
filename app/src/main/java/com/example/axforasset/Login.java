@@ -1,6 +1,8 @@
-        package com.example.axforasset;
+package com.example.axforasset;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -8,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private EditText usernameInput, passwordInput;
     private Button loginBtn;
@@ -32,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(check == true) {
                     Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Login.this, HomePage.class);
+                    intent.putExtra("USERNAME", name);
+                    startActivity(intent);
                 }
             }
         });
