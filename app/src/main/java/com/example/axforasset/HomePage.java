@@ -92,8 +92,8 @@ public class HomePage extends AppCompatActivity {
         popupView.findViewById(R.id.menu_profile).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle Profile click
-                popupWindow.dismiss();
+                Intent intent = new Intent(HomePage.this, Profile.class);
+                startActivity(intent);
             }
         });
 
