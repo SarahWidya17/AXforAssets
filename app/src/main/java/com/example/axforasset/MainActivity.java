@@ -1,6 +1,9 @@
 package com.example.axforasset;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -8,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity {
     private EditText usernameInput, passwordInput;
     private Button loginBtn;
 
@@ -18,23 +23,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        usernameInput = findViewById(R.id.username_input);
-        passwordInput = findViewById(R.id.password_input);
-        loginBtn = findViewById(R.id.login_button);
+//        usernameInput = findViewById(R.id.username_input);
+//        passwordInput = findViewById(R.id.password_input);
+//        loginBtn = findViewById(R.id.login_button);
+//
+//        loginBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String name = usernameInput.getText().toString();
+//                String password = passwordInput.getText().toString();
+//
+//                boolean check = validateinfo(name, password);
+//
+//                if(check == true) {
+//                    Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
-
-                boolean check = validateinfo(name, password);
-
-                if(check == true) {
-                    Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     private Boolean validateinfo(String name, String password) {
