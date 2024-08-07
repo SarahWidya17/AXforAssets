@@ -6,8 +6,6 @@
         android:angle="30"
         android:startColor="@color/pink"
         android:endColor="@color/pinkOpacity">
-
-
     </gradient>
 
 </shape>
