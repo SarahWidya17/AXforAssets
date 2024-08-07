@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="45dp"
+        android:background="@drawable/gradient1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile!"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/greetingMsg"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi, Bygumb!"
+            android:textSize="26dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/caprasimo_regular"
+            android:textColor="@color/white">
+        </TextView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="180sp"
+            android:layout_height="180sp"
+            android:id="@+id/imageView"
+            android:padding="20dp"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:src="@drawable/profile"
+            app:strokeColor="@color/pink"
+            app:strokeWidth="5dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:elevation="20dp">
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Maria Heimer"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/pink"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active since - "
+                android:fontFamily="@font/arimo_regular"
+                android:textColor="@color/black"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jul, 2019"
+                android:fontFamily="@font/arimo_bold"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shadow_rectangle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="367dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle"
+        android:layout_alignParentBottom="true"
+        android:elevation="50dp"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="Personal Information"
+            android:fontFamily="@font/arimo_bold"
+            android:textColor="@color/black"
+            android:textSize="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/profile_rectangle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/baseline_email_24"
+                    android:drawablePadding="8dp"
+                    android:text="Email"
+                    android:textColor="@color/pink"
+                    android:fontFamily="@font/arimo_regular"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Bygumb@gmail.com"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/arimo_regular"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:background="#EC808D"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/baseline_work_24"
+                    android:drawablePadding="8dp"
+                    android:text="Job"
+                    android:textColor="@color/pink"
+                    android:fontFamily="@font/arimo_regular"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Gamer ganteng idaman"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/arimo_regular"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:background="#EC808D"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/baseline_home_24"
+                    android:drawablePadding="8dp"
+                    android:text="Address"
+                    android:textColor="@color/pink"
+                    android:fontFamily="@font/arimo_regular"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Jl. Ketapang, Jonggol"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/arimo_regular"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:background="#EC808D"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/baseline_phone_24"
+                    android:drawablePadding="8dp"
+                    android:text="Phone Number"
+                    android:textColor="@color/pink"
+                    android:fontFamily="@font/arimo_regular"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="+62 0873895394859"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/arimo_regular"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:fontFamily="@font/arimo_bold"
+            android:textSize="15dp"
+            app:backgroundTint="@color/pink"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/baseline_logout_24"
+            app:iconGravity="textStart"
+            app:iconPadding="10dp"
+            tools:text="Log Out" />
+    </LinearLayout>
+
+</RelativeLayout>
