@@ -1,11 +1,11 @@
 package com.example.axforasset;
 
-public class Item {
+public class Item2 {
     private String itemName;
     private String itemDesc;
     private int itemPhoto;
 
-    public Item(String itemName, String itemDesc, int itemPhoto) {
+    public Item2(String itemName, String itemDesc, int itemPhoto) {
         this.itemName = itemName;
         this.itemDesc = itemDesc;
         this.itemPhoto = itemPhoto;

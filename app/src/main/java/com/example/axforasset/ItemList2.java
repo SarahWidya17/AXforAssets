@@ -9,7 +9,7 @@ import android.os.Bundle;
 public class ItemList2 extends AppCompatActivity {
     //nyoba dlu pake data Top
     private RecyclerView recyclerViewTop;
-    private ItemAdapter topAdapter;
+    private ItemAdapter2 topAdapter;
     RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -19,9 +19,9 @@ public class ItemList2 extends AppCompatActivity {
 
         recyclerViewTop = findViewById(R.id.recyclerView);
 
-        ItemData itemData = new ItemData();
+        ItemData2 itemData2 = new ItemData2();
 
-        topAdapter = new ItemAdapter(itemData.getTopProducts(), this);
+        topAdapter = new ItemAdapter2(itemData2.getTopProducts(), this);
 
         layoutManager = new GridLayoutManager(this, 2);
         recyclerViewTop.setLayoutManager(layoutManager);

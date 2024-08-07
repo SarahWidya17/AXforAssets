@@ -12,25 +12,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
-    private List<Item> itemList;
+public class ItemAdapter2 extends RecyclerView.Adapter<ItemAdapter2.ItemViewHolder> {
+    private List<Item2> itemList;
     private Context context;
 
-    public ItemAdapter(List<Item> itemList, Context context) {
+    public ItemAdapter2(List<Item2> itemList, Context context) {
         this.itemList = itemList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ItemAdapter.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemAdapter2.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_list2, parent, false);
         return new ItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemAdapter.ItemViewHolder holder, int position) {
-        Item item = itemList.get(position);
+    public void onBindViewHolder(@NonNull ItemAdapter2.ItemViewHolder holder, int position) {
+        Item2 item = itemList.get(position);
         holder.itemName.setText(item.getItemName());
         holder.itemDesc.setText(item.getItemDesc());
         holder.itemPhoto.setImageResource(item.getItemPhoto());
