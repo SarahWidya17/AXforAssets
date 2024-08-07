@@ -14,4 +14,7 @@
     <color name="shadow">#34000000</color>
     <color name="grey">#B3000000</color>
     <color name="pinkBg">#CCEFD5E0</color>
+    <color name="pinkSoft">#EFD5E0</color>
+    <color name="light_gray">#E0DDDA</color>
+    <color name="dark_gray">#605F5F</color>
 </resources>
