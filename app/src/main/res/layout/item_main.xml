@@ -23,7 +23,7 @@
             android:text="Item"
             android:textColor="@android:color/white"
             android:textSize="30dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/caprasimo_regular"
             android:layout_alignParentStart="true" />
 
         <!-- Floating action button inside the header -->
