@@ -14,18 +14,31 @@
         android:background="@drawable/list_view_rectangle"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
+        <FrameLayout
             android:layout_width="157dp"
             android:layout_height="135dp"
-            app:cardCornerRadius="25dp"
-            android:layout_margin="5dp">
+            android:background="@drawable/rectangle_white"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="5dp">
 
-            <ImageView
-                android:id="@+id/itemPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                    <ImageView
+                        android:id="@+id/itemPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
-        </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="157dp"-->
+<!--            android:layout_height="135dp"-->
+<!--            app:cardCornerRadius="25dp"-->
+<!--            android:layout_margin="5dp">-->
+
+<!--            -->
+
+<!--        </androidx.cardview.widget.CardView>-->
 
         <TextView
             android:id="@+id/itemName"
@@ -48,20 +61,33 @@
             android:textColor="@color/black"
             android:textSize="11dp"/>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/detailBtn"
             android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_margin="5dp"
             android:text="Detail"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:textSize="10dp"
-            android:backgroundTint="@color/pink"
-            app:cornerRadius="50dp"
-            android:elevation="30dp">
+            android:background="@drawable/button"/>
 
-        </com.google.android.material.button.MaterialButton>
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/detailBtn"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:text="Detail"-->
+<!--            android:textSize="10dp"-->
+<!--            android:backgroundTint="@color/pink"-->
+<!--            app:cornerRadius="50dp"-->
+<!--            android:elevation="30dp">-->
+
+<!--        </com.google.android.material.button.MaterialButton>-->
 
 
 
