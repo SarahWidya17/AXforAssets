@@ -22,7 +22,7 @@ public class ItemData2 {
         hairItems.add(new Item2("High Blonde Ponytail", "Make your Barbie cutier", R.drawable.hair_highblondeponytail));
         hairItems.add(new Item2("Curly Brown Hair", "Make your Barbie stylist", R.drawable.hair_curly));
         hairItems.add(new Item2("Long Blonde Hair", "Make your Barbie elegant", R.drawable.hair_longblonde));
-        hairItems.add(new Item2("Modern Brown Hair", "Make your Barbie more Gen-z", R.drawable.hair_black));
+        hairItems.add(new Item2("Modern Brown Hair", "Make your Barbie more Gen-z", R.drawable.hair_modernbrown));
 
         // Top Items
         topItems.add(new Item2("OneSet Cute Top", "Ya lucu pokoknya", R.drawable.top_cuteoneset));
@@ -46,7 +46,7 @@ public class ItemData2 {
         bagItems.add(new Item2("Aqua Picnic Bag", "For picnic", R.drawable.bag_5));
 
         //Footwear Items
-        footwearItems.add(new Item2("Purple Heels", "Comfortable and make you feel young", R.drawable.footwear_1));
+        footwearItems.add(new Item2("Purple Heels", "Comfortable and girlish", R.drawable.footwear_1));
         footwearItems.add(new Item2("Tosca Heels", "Elegant", R.drawable.footwear_2));
         footwearItems.add(new Item2("Aqua High Wedges", "Stylist and Modern", R.drawable.footwear_3));
         footwearItems.add(new Item2("Boots", "For special ocassion", R.drawable.footwear_4));
@@ -58,11 +58,11 @@ public class ItemData2 {
         return hairItems;
     }
 
-    public List<Item2> getTopProducts() {
+    public List<Item2> getTopItems() {
         return topItems;
     }
 
-    public List<Item2> getBottomProducts() {
+    public List<Item2> getBottomItems() {
         return bottomItems;
     }
 

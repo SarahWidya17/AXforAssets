@@ -280,24 +280,20 @@
 
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:fontFamily="@font/arimo_bold"
-            android:textSize="15dp"
-            app:backgroundTint="@color/pink"
-            app:cornerRadius="20dp"
-            app:icon="@drawable/baseline_logout_24"
-            app:iconGravity="textStart"
-            app:iconPadding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Log Out" />
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/baseline_logout_24"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="130dp"
+            android:text="LOG OUT"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
 
     </LinearLayout>

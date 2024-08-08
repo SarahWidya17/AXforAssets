@@ -31,8 +31,8 @@ public class ItemActivity extends AppCompatActivity {
         menuButton = findViewById(R.id.menu_button);
 
         itemsAdapter = new ItemsAdapter(getItems(), item -> {
-            Intent intent = new Intent(ItemActivity.this, DetailActivity.class);
-            intent.putExtra("ITEM_NAME", item.getName());
+            Intent intent = new Intent(ItemActivity.this, ItemList2.class);
+            intent.putExtra(ItemList2.EXTRA_CATEGORY, item.getName());
             startActivity(intent);
         });
         recyclerView.setAdapter(itemsAdapter);
