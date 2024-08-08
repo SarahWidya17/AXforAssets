@@ -84,7 +84,8 @@ public class HomePage extends AppCompatActivity {
         popupView.findViewById(R.id.menu_items).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle Items click
+                Intent intent = new Intent(HomePage.this, ItemActivity.class);
+                startActivity(intent);
                 popupWindow.dismiss();
             }
         });
@@ -94,6 +95,7 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomePage.this, Profile.class);
                 startActivity(intent);
+                popupWindow.dismiss();
             }
         });
 
