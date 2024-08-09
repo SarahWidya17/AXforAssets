@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,22 +39,56 @@ public class ItemActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(itemsAdapter);
 
-        menuButton.setOnClickListener(v -> showPopupMenu(v));
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
+        });
     }
 
     private void showPopupMenu(View anchorView) {
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.menu_lightbox, null);
+        View popupView = inflater.inflate(R.layout.menu_lightbox_2, null);
 
         final PopupWindow popupWindow = new PopupWindow(popupView,
                 DrawerLayout.LayoutParams.WRAP_CONTENT,
                 DrawerLayout.LayoutParams.WRAP_CONTENT,
                 true);
 
-        popupView.findViewById(R.id.menu_items).setOnClickListener(v -> {
-            // Handle Items click
-            popupWindow.dismiss();
+        // Setting up click listeners for menu items
+        popupView.findViewById(R.id.menu_items).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ItemActivity.this, HomePage.class);
+                startActivity(intent);
+                popupWindow.dismiss();
+            }
         });
+
+        popupView.findViewById(R.id.menu_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ItemActivity.this, Profile.class);
+                startActivity(intent);
+                popupWindow.dismiss();
+            }
+        });
+
+        popupView.findViewById(R.id.menu_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle Logout click
+                Intent intent = new Intent(ItemActivity.this, Login.class);
+                startActivity(intent);
+                finish();
+                popupWindow.dismiss();
+            }
+        });
+
+        // Show the popup menu
+        popupWindow.showAtLocation(anchorView, Gravity.TOP | Gravity.END, 0, 0);
     }
 
     private List<Item> getItems() {
