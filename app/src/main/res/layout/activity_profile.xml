@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="450dp"
         android:orientation="vertical"
         android:paddingBottom="45dp"
         android:background="@drawable/gradient1">
@@ -19,14 +19,6 @@
             android:orientation="horizontal"
             android:layout_marginBottom="50dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile!"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
         <!--    nanti text di bawah diganti jd dynamic, ikutin yutub yg udh di save-->
@@ -61,11 +53,11 @@
             android:id="@+id/nameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Maria Heimer"
             android:fontFamily="@font/poppins_bold"
+            android:text="Maria Heimer"
+            android:textAlignment="center"
             android:textColor="@color/pink"
-            android:textSize="18dp"/>
+            android:textSize="18dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,38 +84,32 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="20dp"
-        android:background="@drawable/shadow_rectangle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="367dp">
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:orientation="vertical"
-        android:background="@drawable/rectangle_white"
+        android:layout_height="450dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/rectangle_white"
         android:elevation="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:padding="20dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/arimo_bold"
             android:paddingBottom="10dp"
             android:text="Personal Information"
-            android:fontFamily="@font/arimo_bold"
             android:textColor="@color/black"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/profile_rectangle">
+            android:background="@drawable/profile_rectangle"
+            android:orientation="vertical">
 
-<!--            email-->
+            <!--            email-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,116 +119,36 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
                     android:drawableLeft="@drawable/baseline_email_24"
                     android:drawablePadding="8dp"
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
                     android:text="Email"
-                    android:textColor="@color/pink"
-                    android:fontFamily="@font/arimo_regular"/>
+                    android:textColor="@color/pink" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/emailText"
+                    android:id="@+id/email_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:fontFamily="@font/arimo_regular"
                     android:gravity="center_vertical"
+                    android:padding="5dp"
                     android:text="Bygumb@gmail.com"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/arimo_regular"/>
-            </LinearLayout>
-
-<!--            line-->
-            <View
-                android:layout_width="360dp"
-                android:layout_height="1dp"
-                android:background="#EC808D"
-                android:layout_gravity="center_horizontal"/>
-
-<!--            job-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
-                    android:drawableLeft="@drawable/baseline_work_24"
-                    android:drawablePadding="8dp"
-                    android:text="Job"
-                    android:textColor="@color/pink"
-                    android:fontFamily="@font/arimo_regular"/>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
-                    android:text="Gamer ganteng idaman"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/arimo_regular"/>
+                    android:textColor="@color/grey" />
             </LinearLayout>
 
             <!--            line-->
             <View
                 android:layout_width="360dp"
                 android:layout_height="1dp"
-                android:background="#EC808D"
-                android:layout_gravity="center_horizontal"/>
-
-            <!--            address-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
-                    android:drawableLeft="@drawable/baseline_home_24"
-                    android:drawablePadding="8dp"
-                    android:text="Address"
-                    android:textColor="@color/pink"
-                    android:fontFamily="@font/arimo_regular"/>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
-                    android:text="Jl. Ketapang, Jonggol"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/arimo_regular"/>
-            </LinearLayout>
-
-            <!--            line-->
-            <View
-                android:layout_width="360dp"
-                android:layout_height="1dp"
-                android:background="#EC808D"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:background="#EC808D" />
 
             <!--            job-->
             <LinearLayout
@@ -254,27 +160,107 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:gravity="center_vertical"
-                    android:drawableLeft="@drawable/baseline_phone_24"
+                    android:drawableLeft="@drawable/baseline_work_24"
                     android:drawablePadding="8dp"
-                    android:text="Phone Number"
-                    android:textColor="@color/pink"
-                    android:fontFamily="@font/arimo_regular"/>
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Job"
+                    android:textColor="@color/pink" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:fontFamily="@font/arimo_regular"
                     android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Gamer ganteng idaman"
+                    android:textColor="@color/grey" />
+            </LinearLayout>
+
+            <!--            line-->
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#EC808D" />
+
+            <!--            address-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/baseline_home_24"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Address"
+                    android:textColor="@color/pink" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Jl. Ketapang, Jonggol"
+                    android:textColor="@color/grey" />
+            </LinearLayout>
+
+            <!--            line-->
+            <View
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#EC808D" />
+
+            <!--            job-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/baseline_phone_24"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Phone Number"
+                    android:textColor="@color/pink" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arimo_regular"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
                     android:text="+62 0873895394859"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/arimo_regular"/>
+                    android:textColor="@color/grey" />
             </LinearLayout>
 
 
@@ -292,8 +278,8 @@
             android:paddingLeft="130dp"
             android:text="LOG OUT"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
