@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -16,14 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="50dp">
+            android:layout_marginBottom="50dp"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile!"
-                android:layout_gravity="center" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
+        <!--    nanti text di bawah diganti jd dynamic, ikutin yutub yg udh di save-->
         <TextView
             android:id="@+id/greetingMsg"
             android:layout_marginTop="20dp"
@@ -48,6 +54,7 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:elevation="20dp">
+
         </com.google.android.material.imageview.ShapeableImageView>
 
         <TextView
@@ -80,7 +87,7 @@
                 android:text="Jul, 2019"
                 android:fontFamily="@font/arimo_bold"
                 android:textColor="@color/black"
-                android:textSize="24dp"/>
+                android:textSize="12dp"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -96,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="360dp"
         android:orientation="vertical"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/rectangle_white"
         android:layout_alignParentBottom="true"
         android:elevation="50dp"
         android:padding="20dp">
@@ -108,7 +115,7 @@
             android:text="Personal Information"
             android:fontFamily="@font/arimo_bold"
             android:textColor="@color/black"
-            android:textSize="24dp"/>
+            android:textSize="14dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,6 +123,7 @@
             android:orientation="vertical"
             android:background="@drawable/profile_rectangle">
 
+<!--            email-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,12 +157,14 @@
                     android:fontFamily="@font/arimo_regular"/>
             </LinearLayout>
 
+<!--            line-->
             <View
                 android:layout_width="360dp"
                 android:layout_height="1dp"
                 android:background="#EC808D"
                 android:layout_gravity="center_horizontal"/>
 
+<!--            job-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,12 +197,14 @@
                     android:fontFamily="@font/arimo_regular"/>
             </LinearLayout>
 
+            <!--            line-->
             <View
                 android:layout_width="360dp"
                 android:layout_height="1dp"
                 android:background="#EC808D"
                 android:layout_gravity="center_horizontal"/>
 
+            <!--            address-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -225,12 +237,14 @@
                     android:fontFamily="@font/arimo_regular"/>
             </LinearLayout>
 
+            <!--            line-->
             <View
                 android:layout_width="360dp"
                 android:layout_height="1dp"
                 android:background="#EC808D"
                 android:layout_gravity="center_horizontal"/>
 
+            <!--            job-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -263,23 +277,25 @@
                     android:fontFamily="@font/arimo_regular"/>
             </LinearLayout>
 
+
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:fontFamily="@font/arimo_bold"
-            android:textSize="15dp"
-            app:backgroundTint="@color/pink"
-            app:cornerRadius="20dp"
-            app:icon="@drawable/baseline_logout_24"
-            app:iconGravity="textStart"
-            app:iconPadding="10dp"
-            tools:text="Log Out" />
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/baseline_logout_24"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="130dp"
+            android:text="LOG OUT"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+
     </LinearLayout>
 
 </RelativeLayout>
