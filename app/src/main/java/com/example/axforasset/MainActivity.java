@@ -1,84 +1,65 @@
 package com.example.axforasset;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private EditText emailEt;
-    private Spinner spinner;
-    private Button increaseBtn;
-    private TextView quantityTv;
-    int count = 0;
-    private Button decreaseBtn;
-    private Button buyBtn;
+    private EditText usernameInput, passwordInput;
+    private Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_item);
-        emailEt = findViewById(R.id.emailEt);
-        increaseBtn = findViewById(R.id.increase_quantity);
-        quantityTv = (TextView) findViewById(R.id.quantity);
-        decreaseBtn = findViewById(R.id.decrease_quantity);
-        buyBtn = findViewById(R.id.buy_now);
-        spinner = findViewById(R.id.spinner);
+        setContentView(R.layout.login);
 
-        buyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buyBtn.setBackgroundColor(getResources().getColor(R.color.pink));
-                if (emailEt.getText().toString().isEmpty()){
-                    new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Error")
-                            .setMessage("Email must be filled.")
-                            .setPositiveButton("OK", null)
-                            .show();
-                }
-            }
-        });
+//        usernameInput = findViewById(R.id.username_input);
+//        passwordInput = findViewById(R.id.password_input);
+//        loginBtn = findViewById(R.id.login_button);
+//
+//        loginBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String name = usernameInput.getText().toString();
+//                String password = passwordInput.getText().toString();
+//
+//                boolean check = validateinfo(name, password);
+//
+//                if(check == true) {
+//                    Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
-        //array yg menerima tipe data generic
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                MainActivity.this,
-                R.array.payment_array,
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 
-    public void increment(View v){
-        count++;
-        quantityTv.setText("" + count);
-    }
+    private Boolean validateinfo(String name, String password) {
+        if(name.length() == 0){
+            usernameInput.requestFocus();
+            usernameInput.setError("Username must be filled in");
+            return false;
+        }
 
-    public void decrement(View v){
-        if (count <= 0) count = 0;
-        else count--;
-
-        quantityTv.setText("" + count);
+        else if(password.length() == 0){
+            passwordInput.requestFocus();
+            passwordInput.setError("Password must be filled in");
+            return false;
+        } else if (password.length() < 8) {
+            passwordInput.requestFocus();
+            passwordInput.setError("Password length must be at least 8 characters");
+            return false;
+        } else{
+            return true;
+        }
     }
 }

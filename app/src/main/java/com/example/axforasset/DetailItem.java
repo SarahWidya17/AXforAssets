@@ -1,5 +1,6 @@
 package com.example.axforasset;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -41,10 +42,10 @@ public class DetailItem extends AppCompatActivity {
             public void onClick(View view) {
                 buyBtn.setBackgroundColor(getResources().getColor(R.color.pink));
                 if (emailEt.getText().toString().isEmpty()){
-                    new MaterialAlertDialogBuilder(DetailItem.this)
+                    new AlertDialog.Builder(DetailItem.this)
                             .setTitle("Error")
                             .setMessage("Email must be filled.")
-                            .setPositiveButton("Ok", null)
+                            .setPositiveButton("OK", null)
                             .show();
                 }
             }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Simple Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#E91E63"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome,"
+            android:textColor="@android:color/white"
+            android:textSize="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_alignParentStart="true" />
+
+        <!-- Floating action button inside the header -->
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_share"
+            android:contentDescription="Floating Action Button" />
+    </RelativeLayout>
+
+    <!-- Solid Color ImageView -->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/terms_image"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:layout_below="@id/header"-->
+    <!--        android:background="#FFC107"-->
+    <!--        android:scaleType="centerCrop" />-->
+
+    <!-- Terms and conditions text -->
+
+    <ViewFlipper
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/header"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/carousel"
+        android:layout_above="@id/footer"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/terms_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions content goes here."
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <!-- Footer with tabs -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#E91E63">
+
+        <Button
+            android:id="@+id/tab_terms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Terms"
+            android:textColor="@android:color/white"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/tab_conditions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Condition"
+            android:textColor="@android:color/white"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
