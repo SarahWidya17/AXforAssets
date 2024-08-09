@@ -1,6 +1,5 @@
 package com.example.axforasset;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,8 +13,9 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-public class MainActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
 
+public class DetailItem extends AppCompatActivity {
     private EditText emailEt;
     private Spinner spinner;
     private Button increaseBtn;
@@ -35,15 +35,16 @@ public class MainActivity extends AppCompatActivity {
         buyBtn = findViewById(R.id.buy_now);
         spinner = findViewById(R.id.spinner);
 
+
         buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 buyBtn.setBackgroundColor(getResources().getColor(R.color.pink));
                 if (emailEt.getText().toString().isEmpty()){
-                    new AlertDialog.Builder(MainActivity.this)
+                    new MaterialAlertDialogBuilder(DetailItem.this)
                             .setTitle("Error")
                             .setMessage("Email must be filled.")
-                            .setPositiveButton("OK", null)
+                            .setPositiveButton("Ok", null)
                             .show();
                 }
             }
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         //array yg menerima tipe data generic
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                MainActivity.this,
+                DetailItem.this,
                 R.array.payment_array,
                 androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
 
