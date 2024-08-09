@@ -49,6 +49,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.AXForAsset"
             android:exported="false" />
         <activity
             android:name=".ItemList2"
