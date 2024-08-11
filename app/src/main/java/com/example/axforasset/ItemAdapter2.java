@@ -44,9 +44,10 @@ public class ItemAdapter2 extends RecyclerView.Adapter<ItemAdapter2.ItemViewHold
         holder.detailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailActivity.class);
+                Intent intent = new Intent(context, DetailItem.class);
                 intent.putExtra("ITEM_NAME", item.getItemName()); // Send item ID or other data
                 intent.putExtra("ITEM_PHOTO", item.getItemPhoto());
+                intent.putExtra("ITEM_DESC", item.getItemDesc());
                 context.startActivity(intent);
             }
         });
