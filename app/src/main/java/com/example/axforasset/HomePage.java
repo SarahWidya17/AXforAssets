@@ -2,8 +2,10 @@ package com.example.axforasset;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -19,9 +21,7 @@ public class HomePage extends AppCompatActivity {
     private Button tabTerms, tabConditions;
     private ViewFlipper carousel;
     private ImageView menuButton;
-
-//    Intent intent = getIntent();
-//    String username = intent.getStringExtra("USERNAME");
+    private GestureDetector gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,26 +34,37 @@ public class HomePage extends AppCompatActivity {
         tabConditions = findViewById(R.id.tab_conditions);
         menuButton = findViewById(R.id.menu_button);
 
-
-
         carousel = findViewById(R.id.carousel);
         int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+
         for (int image : images) {
             ImageView imageObj = new ImageView(this);
             imageObj.setBackgroundResource(image);
             carousel.addView(imageObj);
             carousel.setFlipInterval(3000);
             carousel.setAutoStart(true);
-            carousel.setInAnimation(this, android.R.anim.slide_in_left);
-            carousel.setOutAnimation(this, android.R.anim.slide_out_right);
+            carousel.setInAnimation(this, R.anim.slide_in_left);
+            carousel.setOutAnimation(this, R.anim.slide_out_right);
         }
+
+
+        gestureDetector = new GestureDetector(this, new SwipeGestureDetector());
+
+        carousel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+                return true;
+            }
+        });
+
+
 
         Intent intent = getIntent();
         String username = intent.getStringExtra("USERNAME");
         if (username != null) {
             welcomeText.setText("Welcome, " + username);
         }
-
         termsText.setText("These terms and conditions outline the rules and regulations for the use of AXForAssets's Website, located at AXForAssets.com.\n" +
                 "\n" +
                 "By accessing this website we assume you accept these terms and conditions. Do not continue to use AXForAssets if you do not agree to take all of the terms and conditions stated on this page.\n" +
@@ -221,6 +232,48 @@ public class HomePage extends AppCompatActivity {
         });
     }
 
+    private class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListener {
+        private static final int SWIPE_THRESHOLD = 100;
+        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            float diffX = e2.getX() - e1.getX();
+            float diffY = e2.getY() - e1.getY();
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                    if (diffX > 0) {
+                        onSwipeRight();
+                    } else {
+                        onSwipeLeft();
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void onSwipeLeft() {
+            if (carousel.getDisplayedChild() == carousel.getChildCount() - 1) {
+                carousel.setDisplayedChild(0);
+            } else {
+                carousel.showNext();
+            }
+            carousel.setInAnimation(HomePage.this, R.anim.slide_in_right);
+            carousel.setOutAnimation(HomePage.this, R.anim.slide_out_left);
+        }
+
+        private void onSwipeRight() {
+            if (carousel.getDisplayedChild() == 0) {
+                carousel.setDisplayedChild(carousel.getChildCount() - 1);
+            } else {
+                carousel.showPrevious();
+            }
+            carousel.setInAnimation(HomePage.this, R.anim.slide_in_left);
+            carousel.setOutAnimation(HomePage.this, R.anim.slide_out_right);
+        }
+    }
+
     private void showPopupMenu(View anchorView) {
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.menu_lightbox, null);
@@ -234,8 +287,14 @@ public class HomePage extends AppCompatActivity {
         popupView.findViewById(R.id.menu_items).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, ItemActivity.class);
-                startActivity(intent);
+                Intent intent1 = getIntent();
+                String username = intent1.getStringExtra("USERNAME");
+                Intent intent2 = new Intent(HomePage.this, ItemActivity.class);
+                intent2.putExtra("USERNAME", username);
+                startActivity(intent2);
+//                Intent intent = new Intent(HomePage.this, ItemActivity.class);
+//                intent.putExtra("USERNAME", username);
+//                startActivity(intent);
                 popupWindow.dismiss();
             }
         });
