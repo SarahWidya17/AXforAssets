@@ -10,7 +10,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#E91E63"
+        android:background="@color/pink"
         android:padding="10dp">
 
         <TextView
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:background="#E91E63">
+        android:background="@color/pink">
 
         <Button
             android:id="@+id/tab_terms"
