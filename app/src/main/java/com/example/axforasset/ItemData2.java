@@ -39,7 +39,7 @@ public class ItemData2 {
         bottomItems.add(new Item2("Mermaid Skirt", "Very very cute lah", R.drawable.bottom_5));
 
         // Bag Items
-        bagItems.add(new Item2("Big Pinky Bag", "For long holiday and vacation", R.drawable.bag_1));
+        bagItems.add(new Item2("Big Pinky Bag", "For vacation", R.drawable.bag_1));
         bagItems.add(new Item2("Mini Pink Bag", "Limited Edition", R.drawable.bag_2));
         bagItems.add(new Item2("Modern Pink Bag", "Stylist and Modern", R.drawable.bag_3));
         bagItems.add(new Item2("Yellow Sling Bag", "Comfortable and Cute", R.drawable.bag_4));
