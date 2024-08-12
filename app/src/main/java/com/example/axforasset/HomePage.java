@@ -16,11 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 public class HomePage extends AppCompatActivity {
-    
-    private TextView welcomeText, termsText;
-    private Button tabTerms, tabConditions;
+
+    private TextView termsText;
     private ViewFlipper carousel;
-    private ImageView menuButton;
     private GestureDetector gestureDetector;
 
     @Override
@@ -28,11 +26,11 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
-        welcomeText = findViewById(R.id.welcome_text);
+        TextView welcomeText = findViewById(R.id.welcome_text);
         termsText = findViewById(R.id.terms_text);
-        tabTerms = findViewById(R.id.tab_terms);
-        tabConditions = findViewById(R.id.tab_conditions);
-        menuButton = findViewById(R.id.menu_button);
+        Button tabTerms = findViewById(R.id.tab_terms);
+        Button tabConditions = findViewById(R.id.tab_conditions);
+        ImageView menuButton = findViewById(R.id.menu_button);
 
         carousel = findViewById(R.id.carousel);
         int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
@@ -43,8 +41,8 @@ public class HomePage extends AppCompatActivity {
             carousel.addView(imageObj);
             carousel.setFlipInterval(3000);
             carousel.setAutoStart(true);
-            carousel.setInAnimation(this, R.anim.slide_in_left);
-            carousel.setOutAnimation(this, R.anim.slide_out_right);
+            carousel.setInAnimation(this, R.anim.slide_in_right);
+            carousel.setOutAnimation(this, R.anim.slide_out_left);
         }
 
 
@@ -232,6 +230,7 @@ public class HomePage extends AppCompatActivity {
         });
     }
 
+
     private class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListener {
         private static final int SWIPE_THRESHOLD = 100;
         private static final int SWIPE_VELOCITY_THRESHOLD = 100;
@@ -247,28 +246,24 @@ public class HomePage extends AppCompatActivity {
                     } else {
                         onSwipeLeft();
                     }
-                    return true;
+                    return true;  // Swipe detected, return true
                 }
             }
-            return false;
+            return false;  // No valid swipe detected, return false
         }
 
         private void onSwipeLeft() {
-            if (carousel.getDisplayedChild() == carousel.getChildCount() - 1) {
-                carousel.setDisplayedChild(0);
-            } else {
+
                 carousel.showNext();
-            }
+
             carousel.setInAnimation(HomePage.this, R.anim.slide_in_right);
             carousel.setOutAnimation(HomePage.this, R.anim.slide_out_left);
         }
 
         private void onSwipeRight() {
-            if (carousel.getDisplayedChild() == 0) {
-                carousel.setDisplayedChild(carousel.getChildCount() - 1);
-            } else {
+
                 carousel.showPrevious();
-            }
+
             carousel.setInAnimation(HomePage.this, R.anim.slide_in_left);
             carousel.setOutAnimation(HomePage.this, R.anim.slide_out_right);
         }
@@ -326,3 +321,6 @@ public class HomePage extends AppCompatActivity {
         popupWindow.showAtLocation(anchorView, Gravity.TOP | Gravity.END, 0, 0);
     }
 }
+
+
+
