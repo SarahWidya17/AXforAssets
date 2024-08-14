@@ -41,6 +41,7 @@ public class DetailItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_item);
         Intent intent = getIntent();
+        String username = intent.getStringExtra("USERNAME");
         itemName = findViewById(R.id.namaItem);
         itemPhoto = findViewById(R.id.detailImage);
         descItem = findViewById(R.id.deskripsiItem);
@@ -121,7 +122,11 @@ public class DetailItem extends AppCompatActivity {
                     dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialogInterface) {
+
+                            Intent intent1 = getIntent();
+                            String username = intent1.getStringExtra("USERNAME");
                             Intent intent = new Intent(DetailItem.this, ItemActivity.class);
+                            intent.putExtra("USERNAME", username);
                             startActivity(intent);
                             finish();
                         }
@@ -133,7 +138,10 @@ public class DetailItem extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent1 = getIntent();
+                String username = intent1.getStringExtra("USERNAME");
                 Intent intent = new Intent(DetailItem.this, HomePage.class);
+                intent.putExtra("USERNAME", username);
                 startActivity(intent);
                 finish();
             }

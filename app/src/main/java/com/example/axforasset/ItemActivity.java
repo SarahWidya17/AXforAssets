@@ -20,7 +20,6 @@ import java.util.List;
 public class ItemActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ItemsAdapter itemsAdapter;
-    private ImageView menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +29,14 @@ public class ItemActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view_studios);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        menuButton = findViewById(R.id.menu_button);
+        ImageView menuButton = findViewById(R.id.menu_button);
 
         itemsAdapter = new ItemsAdapter(getItems(), item -> {
+            Intent intent1 = getIntent();
+            String username = intent1.getStringExtra("USERNAME");
             Intent intent = new Intent(ItemActivity.this, ItemList2.class);
             intent.putExtra(ItemList2.EXTRA_CATEGORY, item.getName());
+            intent.putExtra("USERNAME", username);
             startActivity(intent);
         });
         recyclerView.setAdapter(itemsAdapter);

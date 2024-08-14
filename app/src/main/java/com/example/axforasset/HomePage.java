@@ -1,6 +1,7 @@
 package com.example.axforasset;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -39,7 +40,7 @@ public class HomePage extends AppCompatActivity {
             ImageView imageObj = new ImageView(this);
             imageObj.setBackgroundResource(image);
             carousel.addView(imageObj);
-            carousel.setFlipInterval(3000);
+            carousel.setFlipInterval(2000);
             carousel.setAutoStart(true);
             carousel.setInAnimation(this, R.anim.slide_in_right);
             carousel.setOutAnimation(this, R.anim.slide_out_left);
@@ -100,6 +101,8 @@ public class HomePage extends AppCompatActivity {
         tabTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tabTerms.setTextColor(Color.WHITE);
+                tabConditions.setTextColor(Color.BLACK);
                 termsText.setText("These terms and conditions outline the rules and regulations for the use of AXForAssets's Website, located at AXForAssets.com.\n" +
                         "\n" +
                         "By accessing this website we assume you accept these terms and conditions. Do not continue to use AXForAssets if you do not agree to take all of the terms and conditions stated on this page.\n" +
@@ -139,6 +142,8 @@ public class HomePage extends AppCompatActivity {
         tabConditions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tabTerms.setTextColor(Color.BLACK);
+                tabConditions.setTextColor(Color.WHITE);
                 termsText.setText("Hyperlinking to our Content\n" +
                         "The following organizations may link to our Website without prior written approval:\n" +
                         "• Government agencies;\n" +

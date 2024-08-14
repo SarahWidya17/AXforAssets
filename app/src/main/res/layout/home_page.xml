@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pinkBg"
     tools:context=".MainActivity">
 
     <!-- Simple Header -->
@@ -97,7 +98,7 @@
             android:layout_weight="1"
             android:text="Condition"
             android:fontFamily="@font/arimo_regular"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:background="?android:attr/selectableItemBackground"
             android:textSize="20sp"/>
 

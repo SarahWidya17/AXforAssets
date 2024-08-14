@@ -49,15 +49,15 @@
                 android:id="@+id/itemCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
                 android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/baseline_arrow_back_ios_new_24"
+                android:fontFamily="@font/caprasimo_regular"
+                android:gravity="center"
+                android:padding="10dp"
                 android:text="category"
                 android:textAllCaps="true"
-                android:fontFamily="@font/caprasimo_regular"
-                android:textSize="32sp"
-                android:textColor="@color/pink"/>
+                android:textColor="@color/pink"
+                android:textSize="32sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
