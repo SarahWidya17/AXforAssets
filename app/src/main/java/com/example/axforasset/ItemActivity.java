@@ -60,9 +60,13 @@ public class ItemActivity extends AppCompatActivity {
         popupView.findViewById(R.id.menu_items).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(ItemActivity.this, HomePage.class);
-                startActivity(intent);
+                Intent intent1 = getIntent();
+                String username = intent1.getStringExtra("USERNAME");
+                Intent intent2 = new Intent(ItemActivity.this, HomePage.class);
+                intent2.putExtra("USERNAME", username);
+                startActivity(intent2);
+//                Intent intent = new Intent(ItemActivity.this, HomePage.class);
+//                startActivity(intent);
                 popupWindow.dismiss();
             }
         });

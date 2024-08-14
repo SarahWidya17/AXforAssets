@@ -26,6 +26,7 @@ public class Profile extends AppCompatActivity {
         if (nama != null) {
             UserName.setText(nama);
             greetingText.setText("Hi, " + nama + "!");
+            UserName.setText(nama + " Heimer");
             emailText.setText(nama + "@gmail.com");
         }
 

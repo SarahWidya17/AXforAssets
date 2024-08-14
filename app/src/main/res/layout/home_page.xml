@@ -20,7 +20,7 @@
             android:text="Welcome,"
             android:textColor="@android:color/white"
             android:textSize="30dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/caprasimo_regular"
             android:layout_alignParentStart="true" />
 
         <!-- Floating action button inside the header -->
@@ -48,7 +48,7 @@
     <ViewFlipper
         android:id="@+id/carousel"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="250dp"
         android:layout_below="@id/header"/>
 
     <ScrollView
@@ -61,10 +61,13 @@
 
         <TextView
             android:id="@+id/terms_text"
+            android:fontFamily="@font/arimo_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
             android:text="Terms and Conditions content goes here."
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
     </ScrollView>
 
     <!-- Footer with tabs -->
@@ -82,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Terms"
+            android:fontFamily="@font/arimo_regular"
             android:textColor="@android:color/white"
             android:background="?android:attr/selectableItemBackground"
             android:textSize="20sp"/>
@@ -92,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Condition"
+            android:fontFamily="@font/arimo_regular"
             android:textColor="@android:color/white"
             android:background="?android:attr/selectableItemBackground"
             android:textSize="20sp"/>

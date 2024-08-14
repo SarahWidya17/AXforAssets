@@ -57,7 +57,11 @@ public class DetailItem extends AppCompatActivity {
         }
 
         String itemDescIntent = intent.getStringExtra("ITEM_DESC");
-        descItem.setText(itemDescIntent);
+        if (itemDescIntent != null){
+            String additionalText = "\nBarbie is more than just a doll; she's a part of a world of imagination and endless adventures. Perfect for collectors and kids alike, each Barbie brings her unique style and story.";
+            String updateDescription = itemDescIntent + additionalText;
+            descItem.setText(updateDescription);
+        }
 
         int itemPhotoIntent = intent.getIntExtra("ITEM_PHOTO", -1);
         itemPhoto.setImageResource(itemPhotoIntent);
